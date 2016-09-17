@@ -10,13 +10,26 @@ import UIKit
 
 class WeatherViewController: ViewController {
 
-    @IBAction func zipcodeTextField(sender: AnyObject) {
-        print("action occurred")
+    @IBOutlet weak var weatherReportLabel: UILabel!
+    
+    @IBAction func searchButton(sender: AnyObject) {
+        
+        // Hide keyboard with touchDown on searchButton
+        self.view.endEditing(true)
     }
+    
+    @IBOutlet weak var weatherZipcodeTextfield: UITextField!
+    
+    override func viewWillAppear(animated: Bool) {
+        //Hide weather report label
+        weatherReportLabel.text = ""
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {

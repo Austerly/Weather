@@ -18,29 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter zipcode of location here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bai-T9-R9T">
-                                <rect key="frame" x="20" y="98" width="560" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter zipcode of location here and press Search" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Bai-T9-R9T">
+                                <rect key="frame" x="20" y="50" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="sSd-Wh-Ji0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert" returnKeyType="search"/>
-                                <connections>
-                                    <action selector="zipcodeTextField:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="ApP-b0-rm6"/>
-                                </connections>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0p-3i-D9K">
-                                <rect key="frame" x="20" y="289" width="560" height="291"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weatherReportLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0p-3i-D9K">
+                                <rect key="frame" x="20" y="241" width="560" height="339"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zwn-i4-g1S">
-                                <rect key="frame" x="20" y="185" width="560" height="30"/>
+                                <rect key="frame" x="20" y="137" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Osd-kh-WRU"/>
                                 </constraints>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchDown" id="3yo-7e-aoN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -54,9 +54,13 @@
                             <constraint firstItem="Zwn-i4-g1S" firstAttribute="trailing" secondItem="e0p-3i-D9K" secondAttribute="trailing" id="kBo-qJ-b3n"/>
                             <constraint firstItem="Bai-T9-R9T" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="mcR-wb-DcC"/>
                             <constraint firstItem="Bai-T9-R9T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qPJ-Ko-VEH"/>
-                            <constraint firstItem="Bai-T9-R9T" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="78" id="vik-7Z-27T"/>
+                            <constraint firstItem="Bai-T9-R9T" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="vik-7Z-27T"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="weatherReportLabel" destination="e0p-3i-D9K" id="maC-Jj-b4N"/>
+                        <outlet property="weatherZipcodeTextfield" destination="Bai-T9-R9T" id="UPO-aq-LQJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
